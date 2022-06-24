@@ -1,5 +1,29 @@
 def login():
-    pass
+    usuario = 'romulo'
+    senha = '123456'
+    novo_user = input('Usuário: ').lower()
+    nova_password = input('Senha: ')
+    if usuario == novo_user and senha == nova_password:
+        print('Entrando no sistema')
+        trabalhador()
+    else:
+        resp = ''
+        print('LOGIN INVALIDO')
+        while resp != 'S':
+            resp = input('Deseja cadastrar um novo usuário? [S/N]: ').upper()[0]
+            if resp == 'S':
+                usuario2 = input('Novo Usuário: ')
+                senha2 = input('Nova Senha: ')
+                print('Novo login cadastrado!')
+                novo_user = input('Usuário: ')
+                nova_password = input('Senha: ')
+                if usuario == novo_user and senha == nova_password or usuario2 == novo_user and senha2 == nova_password:
+                    print('Entrando no sistema')
+                    trabalhador()
+            else:
+                exit()
+                
+
 
 def consumidor():
     print('''
@@ -28,8 +52,6 @@ def consumidor():
    
    
 def trabalhador():
-    login()
-
     print('''
    [ 1 ] Adicionar um produto  [ 1 ]
    [ 2 ]  Remover um produto   [ 2 ] 
