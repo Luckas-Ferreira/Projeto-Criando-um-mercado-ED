@@ -1,3 +1,6 @@
+#Os comandos para usar no Mercado.py
+
+
 from TabelaHash import *
 
 tamanhoHash = 2

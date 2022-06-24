@@ -1,3 +1,5 @@
+#Precisamos deixar essa tabela funcionando com palavras
+
 class Hash:
 
      def __init__(self,tam):
