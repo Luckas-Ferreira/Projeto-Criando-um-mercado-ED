@@ -66,9 +66,9 @@ def trabalhador():
         print(' remover um produto da tabela hash')
     elif opcao == '3':
         print(' Ver todos os produtos da tabela hash')
-    elif opcao == 4:
+    elif opcao == '4':
         print('Pesquisar pelo nome na tabela hash')
-    elif opcao == 5:
+    elif opcao == '5':
         exit()
     else:
         while opcao not in '12345':        
@@ -80,8 +80,8 @@ def trabalhador():
                 print(' remover um produto da tabela hash')
             elif opcao == '3':
                 print(' Ver todos os produtos da tabela hash')
-            elif opcao == 4:
+            elif opcao == '4':
                 print('Pesquisar pelo nome na tabela hash')
-            elif opcao == 5:
+            elif opcao == '5':
                 exit()
     trabalhador()
