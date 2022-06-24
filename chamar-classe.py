@@ -1,4 +1,4 @@
-#Os comandos para usar no Mercado.py
+#Os comandos para usar no SistemaLogistico.py
 
 
 from TabelaHash import *
