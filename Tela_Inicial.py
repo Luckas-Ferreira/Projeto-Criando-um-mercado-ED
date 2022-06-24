@@ -1,11 +1,11 @@
 from todasAsFuncoes import *
- 
+
 print('MERCADINHO DO RÔMULO')
 print ('''
 Você é consumidor ou trabalhar no mercado? \n
-         [ 1 ]  Consumidor  [ 1 ]
-         [ 2 ] Trabalhador  [ 2 ] 
-         [ 3 ]     SAIR     [ 3 ] \n''')
+        [ 1 ]  Consumidor  [ 1 ]
+        [ 2 ] Trabalhador  [ 2 ] 
+        [ 3 ]     SAIR     [ 3 ] \n''')
 opção = input(' Resposta: ')
 if opção == '1':
     consumidor()

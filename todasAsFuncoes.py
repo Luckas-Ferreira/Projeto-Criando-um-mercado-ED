@@ -5,7 +5,7 @@ def consumidor():
     print('''
      [ 1 ] Ver todos os produtos [ 1 ]
      [ 2 ]  Pesquisar pelo nome  [ 2 ] 
-     [ 3 ]         SAIR          [ 3 ]
+     [ 3 ]          SAIR         [ 3 ]
 ''')
     opcao = input('Resposta: ')
     if opcao == '1':
@@ -24,6 +24,7 @@ def consumidor():
                 print('busca na tabela hash')
             elif opcao == '3':
                 exit()
+    consumidor()
    
    
 def trabalhador():
@@ -61,3 +62,4 @@ def trabalhador():
                 print('Pesquisar pelo nome na tabela hash')
             elif opcao == 5:
                 exit()
+    trabalhador()
