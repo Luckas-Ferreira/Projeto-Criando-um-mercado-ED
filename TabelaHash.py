@@ -52,3 +52,10 @@ class Hash:
             self.tab[newPos] = str(item)          
             print("-> Inserido HASH[%d]" %newPos)            
 # fim Classe Hashlinear
+
+from TabelaHash import *
+
+tamanhoHash = 7
+tab = Hash(tamanhoHash)
+tab.insere(555)
+tab.imprime()
