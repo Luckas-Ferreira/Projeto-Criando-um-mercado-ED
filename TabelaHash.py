@@ -1,4 +1,7 @@
-class HashTable:
+from optparse import Values
+
+
+class  TabelaHash:
     def __init__(self):
         self.size = 11
         self.slots = [None] * self.size
@@ -26,7 +29,7 @@ class HashTable:
             self.data[nextslot] = data #replace
 
     def hashfunction(self,key,size):
-        return key%size
+         return key%size
 
     def rehash(self,oldhash,size):
         return (oldhash+1)%size
@@ -39,14 +42,14 @@ class HashTable:
       found = False
       position = startslot
       while self.slots[position] != None and  \
-                          not found and not stop:
-        if self.slots[position] == key:
-          found = True
-          data = self.data[position]
-        else:
-          position=self.rehash(position,len(self.slots))
-          if position == startslot:
-              stop = True
+                           not found and not stop:
+         if self.slots[position] == key:
+           found = True
+           data = self.data[position]
+         else:
+           position=self.rehash(position,len(self.slots))
+           if position == startslot:
+               stop = True
       return data
 
     def __getitem__(self,key):
@@ -55,15 +58,19 @@ class HashTable:
     def __setitem__(self,key,data):
         self.put(key,data)
 
-H=HashTable()
-H[54]="Placa Mãe"
-H[26]="Memoria RAM"
-H[93]="Processador I5"
-H[17]="SSD 500GB"
-H[77]="SSD 256GB"
-H[31]="Placa Nvidia"
-H[44]="Cooler"
-H[55]="Gabinete"
-H[20]="Monitor"
-H.put(28, "Mouse")
-H.data
+Tabela = TabelaHash()
+Tabela[54]='Placa Mãe ------- R$'
+Tabela[26]='Memoria RAM ------ R$'
+Tabela[93]='Processador I5 --- R$'
+Tabela[17]='SSD 500GB -------- R$'
+Tabela[77]='SSD 256GB -------- R$'
+Tabela[31]='Placa Nvidia ----- R$'
+Tabela[44]='Cooler ----------- R$'
+Tabela[55]='Gabinete --------- R$'
+Tabela[20]='Monitor ---------- R$'
+
+print('Mostrando todos os produtos')
+for k, v in enumerate(Tabela.data):
+  if v == None:
+    v = '\033[1;31mVazio ------------ R$0,00\033[m'
+  print(k, v)
