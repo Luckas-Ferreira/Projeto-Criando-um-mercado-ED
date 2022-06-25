@@ -1,5 +1,15 @@
-from optparse import Values
-
+class cor:
+  def __init__(self):
+    self.cor = None
+  def close(cor= None):
+    close = '\033[m'
+    return close
+  def red(cor = None):
+      red = '\033[1;31m'
+      return red
+  def green(cor = None):
+    blue = '\033[1;32m'
+    return blue
 
 class  TabelaHash:
     def __init__(self):
@@ -58,19 +68,27 @@ class  TabelaHash:
     def __setitem__(self,key,data):
         self.put(key,data)
 
-Tabela = TabelaHash()
-Tabela[54]='Placa Mãe ------- R$'
-Tabela[26]='Memoria RAM ------ R$'
-Tabela[93]='Processador I5 --- R$'
-Tabela[17]='SSD 500GB -------- R$'
-Tabela[77]='SSD 256GB -------- R$'
-Tabela[31]='Placa Nvidia ----- R$'
-Tabela[44]='Cooler ----------- R$'
-Tabela[55]='Gabinete --------- R$'
-Tabela[20]='Monitor ---------- R$'
 
-print('Mostrando todos os produtos')
-for k, v in enumerate(Tabela.data):
-  if v == None:
-    v = '\033[1;31mVazio ------------ R$0,00\033[m'
-  print(k, v)
+Tabela = TabelaHash()
+Tabela[54]=cor.green() + 'Placa Mãe ------- R$' + cor.close()
+Tabela[26]=cor.green() + 'Memoria RAM ------ R$' + cor.close()
+Tabela[93]=cor.green() + 'Processador I5 --- R$' + cor.close()
+Tabela[17]=cor.green() + 'SSD 500GB -------- R$' + cor.close()
+Tabela[77]=cor.green() + 'SSD 256GB -------- R$' + cor.close()
+Tabela[31]=cor.green() + 'Placa Nvidia ----- R$' + cor.close()
+Tabela[44]=cor.green() + 'Cooler ----------- R$' + cor.close()
+Tabela[55]=cor.green() + 'Gabinete --------- R$' + cor.close()
+Tabela[20]=cor.green() + 'Monitor ---------- R$' + cor.close()
+
+def mostrarProdutos():
+  print('Mostrando todos os produtos')
+  for k, v in enumerate(Tabela.data):
+    if v == None:
+      v = '\033[1;31mVazio ------------ R$0,00\033[m'
+    print(k, v)
+
+def pesquisarNome():
+  item = Tabela.get(int(input('Pesquisar: ')))
+  return item
+
+print(pesquisarNome())

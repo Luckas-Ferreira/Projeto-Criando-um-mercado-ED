@@ -1,3 +1,6 @@
+from TabelaHash import mostrarProdutos
+
+
 def login():
     usuario = 'romulo'
     senha = '123456'
@@ -24,7 +27,6 @@ def login():
                 exit()
                 
 
-
 def consumidor():
     print('''
      [ 1 ] Ver todos os produtos [ 1 ]
@@ -33,7 +35,7 @@ def consumidor():
 ''')
     opcao = input('Resposta: ')
     if opcao == '1':
-        print('imprime a tabela hash')
+        mostrarProdutos()
     elif opcao == '2':
         print(' Busca na tabela hash')
     elif opcao == '3':
