@@ -1,4 +1,4 @@
-from TabelaHash import mostrarProdutos
+from TabelaHash import mostrarProdutos, pesquisarNome
 
 
 def login():
@@ -37,7 +37,7 @@ def consumidor():
     if opcao == '1':
         mostrarProdutos()
     elif opcao == '2':
-        print(' Busca na tabela hash')
+        pesquisarNome()
     elif opcao == '3':
         exit()
     else:
@@ -45,9 +45,9 @@ def consumidor():
             print('\033[1;31m OPÇÃO INVÁLIDA \033[m')
             opcao = input(' Qual sua resposta? ')
             if opcao == '1':
-                print('imprime a tabela hash')
+                mostrarProdutos()
             elif opcao == '2':
-                print('busca na tabela hash')
+                pesquisarNome()
             elif opcao == '3':
                 exit()
     consumidor()
@@ -67,9 +67,9 @@ def trabalhador():
     elif opcao == '2':
         print(' remover um produto da tabela hash')
     elif opcao == '3':
-        print(' Ver todos os produtos da tabela hash')
+        mostrarProdutos()
     elif opcao == '4':
-        print('Pesquisar pelo nome na tabela hash')
+        pesquisarNome()
     elif opcao == '5':
         exit()
     else:
@@ -81,9 +81,9 @@ def trabalhador():
             elif opcao == '2':
                 print(' remover um produto da tabela hash')
             elif opcao == '3':
-                print(' Ver todos os produtos da tabela hash')
+                mostrarProdutos()
             elif opcao == '4':
-                print('Pesquisar pelo nome na tabela hash')
+                pesquisarNome()
             elif opcao == '5':
                 exit()
     trabalhador()

@@ -1,3 +1,6 @@
+from cgi import print_arguments
+
+
 class cor:
   def __init__(self):
     self.cor = None
@@ -70,15 +73,17 @@ class  TabelaHash:
 
 
 Tabela = TabelaHash()
-Tabela[54]=cor.green() + 'Placa Mãe ------- R$' + cor.close()
-Tabela[26]=cor.green() + 'Memoria RAM ------ R$' + cor.close()
-Tabela[93]=cor.green() + 'Processador I5 --- R$' + cor.close()
+Tabela[54]=cor.green() + 'PLACA MÃE ------- R$' + cor.close()
+Tabela[26]=cor.green() + 'MEMORIA RAM ------ R$' + cor.close()
+Tabela[93]=cor.green() + 'PROCESSADOR I5 --- R$' + cor.close()
 Tabela[17]=cor.green() + 'SSD 500GB -------- R$' + cor.close()
 Tabela[77]=cor.green() + 'SSD 256GB -------- R$' + cor.close()
-Tabela[31]=cor.green() + 'Placa Nvidia ----- R$' + cor.close()
-Tabela[44]=cor.green() + 'Cooler ----------- R$' + cor.close()
-Tabela[55]=cor.green() + 'Gabinete --------- R$' + cor.close()
-Tabela[20]=cor.green() + 'Monitor ---------- R$' + cor.close()
+Tabela[31]=cor.green() + 'PLACA DE VÍDEO --- R$' + cor.close()
+Tabela[44]=cor.green() + 'COOLER ----------- R$' + cor.close()
+Tabela[55]=cor.green() + 'GABINETE --------- R$' + cor.close()
+Tabela[20]=cor.green() + 'MONITOR ---------- R$' + cor.close()
+
+cooler = 44
 
 def mostrarProdutos():
   print('Mostrando todos os produtos')
@@ -90,5 +95,3 @@ def mostrarProdutos():
 def pesquisarNome():
   item = Tabela.get(int(input('Pesquisar: ')))
   return item
-
-print(pesquisarNome())
