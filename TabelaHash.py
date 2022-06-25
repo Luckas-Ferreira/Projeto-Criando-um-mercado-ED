@@ -1,61 +1,69 @@
-#Precisamos deixar essa tabela funcionando com palavras
+class HashTable:
+    def __init__(self):
+        self.size = 11
+        self.slots = [None] * self.size
+        self.data = [None] * self.size
 
-class Hash:
+    def put(self,key,data):
+      hashvalue = self.hashfunction(key,len(self.slots))
 
-     def __init__(self,tam):
-          self.tab = {}
-          self.tam_max = tam
+      if self.slots[hashvalue] == None:
+        self.slots[hashvalue] = key
+        self.data[hashvalue] = data
+      else:
+        if self.slots[hashvalue] == key:
+          self.data[hashvalue] = data  #replace
+        else:
+          nextslot = self.rehash(hashvalue,len(self.slots))
+          while self.slots[nextslot] != None and \
+                          self.slots[nextslot] != key:
+            nextslot = self.rehash(nextslot,len(self.slots))
 
-     def funcaohash(self, chave):
-          v = int(chave)
-          return v%self.tam_max
-
-     def cheia(self):
-          return len(self.tab) == self.tam_max
-
-     def imprime(self):
-          for i in self.tab:
-               print("Hash[%d] = " %i, end="")
-               print (self.tab[i])
-
-     def apaga(self, chave):
-          pos = self.busca(chave)
-          if pos != -1:
-               del self.tab[pos]
-               print("-> Dado da posicao %d apagado" %pos) 
+          if self.slots[nextslot] == None:
+            self.slots[nextslot]=key
+            self.data[nextslot]=data
           else:
-               print("Item nao encontrado")
+            self.data[nextslot] = data #replace
 
-     def busca(self, chave):
-          pos = self.funcaohash(chave)
-          if self.tab.get(pos) == None: # se esta posição não existe
-               return -1 #saida imediata
-          if self.tab[pos] == chave: 
-               return pos
-          return -1
+    def hashfunction(self,key,size):
+        return key%size
 
-     def insere(self, item):
-          if self.cheia():
-               print("-> ATENÇÃO Tabela Hash CHEIA")
-               return
-          pos = self.funcaohash(str(item))
-          print("Posição recebida inicialmente: "+ str(pos))
-          if self.tab.get(pos) == None: # se posicao vazia
-               self.tab[pos] = str(item)
-               print("-> Inserido HASH[%d]" %pos)          
-          else: # se posicao ocupada, insere na próxima disponível
-            print(" - Posição ocupada")
-            newPos = int(self.tab[pos]) + 1
-            while self.tab.get(newPos) != None:
-                newPos += 1
-                
-            self.tab[newPos] = str(item)          
-            print("-> Inserido HASH[%d]" %newPos)            
-# fim Classe Hashlinear
+    def rehash(self,oldhash,size):
+        return (oldhash+1)%size
 
-from TabelaHash import *
+    def get(self,key):
+      startslot = self.hashfunction(key,len(self.slots))
 
-tamanhoHash = 7
-tab = Hash(tamanhoHash)
-tab.insere(555)
-tab.imprime()
+      data = None
+      stop = False
+      found = False
+      position = startslot
+      while self.slots[position] != None and  \
+                          not found and not stop:
+        if self.slots[position] == key:
+          found = True
+          data = self.data[position]
+        else:
+          position=self.rehash(position,len(self.slots))
+          if position == startslot:
+              stop = True
+      return data
+
+    def __getitem__(self,key):
+        return self.get(key)
+
+    def __setitem__(self,key,data):
+        self.put(key,data)
+
+H=HashTable()
+H[54]="Placa Mãe"
+H[26]="Memoria RAM"
+H[93]="Processador I5"
+H[17]="SSD 500GB"
+H[77]="SSD 256GB"
+H[31]="Placa Nvidia"
+H[44]="Cooler"
+H[55]="Gabinete"
+H[20]="Monitor"
+H.put(28, "Mouse")
+H.data
