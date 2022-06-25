@@ -83,7 +83,6 @@ Tabela[44]=cor.green() + 'COOLER ----------- R$50,00' + cor.close()
 Tabela[55]=cor.green() + 'GABINETE --------- R$300,00' + cor.close()
 Tabela[20]=cor.green() + 'MONITOR ---------- R$400,00' + cor.close()
 
-cooler = 44
 
 def mostrarProdutos():
   print('Mostrando todos os produtos')
@@ -91,6 +90,25 @@ def mostrarProdutos():
     if v == None:
       v = '\033[1;31mVazio ------------ R$0,00\033[m'
     print(k, v)
+
+
+def adicionarProduto():
+  while True:
+    if Tabela[66] is None:
+      nome = input('Adicionar: ').upper()
+      valor = float(input('Valor: R$'))
+      adicionar = (f'{nome} ---------- R${valor :.2f}')
+      Tabela.put(66,cor.green() + adicionar + cor.close())
+      mostrarProdutos()
+      return False
+
+    else:
+      nome = input('Adicionar: ').upper()
+      valor = float(input('Valor: R$'))
+      adicionar = (f'{nome} ---------- R${valor :.2f}')
+      Tabela.put(36,cor.green() + adicionar + cor.close())
+      mostrarProdutos()
+      return False
 
 def pesquisarNome():
   pesquisa = str(input('Pesquisar: ')).upper()
@@ -103,6 +121,3 @@ def pesquisarNome():
       return item
   else:
     print('Não temos esse produto!')
-
-def removerProduto():
-  

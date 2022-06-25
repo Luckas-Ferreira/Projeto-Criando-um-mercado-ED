@@ -1,4 +1,5 @@
 from TabelaHash import mostrarProdutos, pesquisarNome
+from TabelaHash import *
 
 
 def login():
@@ -65,7 +66,7 @@ def trabalhador():
 ''')
     opcao = input('Resposta: ')
     if opcao == '1':
-        print('adicionar um produto na tabela hash')
+        adicionarProduto()
     elif opcao == '2':
         print(' remover um produto da tabela hash')
     elif opcao == '3':
@@ -79,7 +80,7 @@ def trabalhador():
             print('\033[1;31m OPÇÃO INVÁLIDA \033[m')
             opcao = input(' Qual sua resposta? ')
             if opcao == '1':
-                print('adicionar um produto na tabela hash')
+                adicionarProduto()
             elif opcao == '2':
                 print(' remover um produto da tabela hash')
             elif opcao == '3':
