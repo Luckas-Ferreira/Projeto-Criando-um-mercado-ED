@@ -103,3 +103,6 @@ def pesquisarNome():
       return item
   else:
     print('Não temos esse produto!')
+
+def removerProduto():
+  

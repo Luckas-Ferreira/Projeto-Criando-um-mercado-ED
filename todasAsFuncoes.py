@@ -71,7 +71,7 @@ def trabalhador():
     elif opcao == '3':
         mostrarProdutos()
     elif opcao == '4':
-        pesquisarNome()
+        print(pesquisarNome())
     elif opcao == '5':
         exit()
     else:
@@ -85,7 +85,7 @@ def trabalhador():
             elif opcao == '3':
                 mostrarProdutos()
             elif opcao == '4':
-                pesquisarNome()
+                print(pesquisarNome())
             elif opcao == '5':
                 exit()
     trabalhador()

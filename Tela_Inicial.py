@@ -21,7 +21,7 @@ def telaInicial():
             if opção == '1':
                 consumidor()
             elif opção == '2':
-                trabalhador()
+                login()
             elif opção == '3':
                 exit()
 
