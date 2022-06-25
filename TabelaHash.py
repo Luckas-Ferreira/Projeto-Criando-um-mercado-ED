@@ -73,15 +73,15 @@ class  TabelaHash:
 
 
 Tabela = TabelaHash()
-Tabela[54]=cor.green() + 'PLACA MÃE ------- R$' + cor.close()
-Tabela[26]=cor.green() + 'MEMORIA RAM ------ R$' + cor.close()
-Tabela[93]=cor.green() + 'PROCESSADOR I5 --- R$' + cor.close()
-Tabela[17]=cor.green() + 'SSD 500GB -------- R$' + cor.close()
-Tabela[77]=cor.green() + 'SSD 256GB -------- R$' + cor.close()
-Tabela[31]=cor.green() + 'PLACA DE VÍDEO --- R$' + cor.close()
-Tabela[44]=cor.green() + 'COOLER ----------- R$' + cor.close()
-Tabela[55]=cor.green() + 'GABINETE --------- R$' + cor.close()
-Tabela[20]=cor.green() + 'MONITOR ---------- R$' + cor.close()
+Tabela[54]=cor.green() + 'PLACA MÃE ------- R$500,00' + cor.close()
+Tabela[26]=cor.green() + 'MEMORIA RAM ------ R$200,00' + cor.close()
+Tabela[93]=cor.green() + 'PROCESSADOR I5 --- R$500,00' + cor.close()
+Tabela[17]=cor.green() + 'SSD 500GB -------- R$400,00' + cor.close()
+Tabela[77]=cor.green() + 'SSD 256GB -------- R$200,00' + cor.close()
+Tabela[31]=cor.green() + 'PLACA DE VÍDEO --- R$1500,00' + cor.close()
+Tabela[44]=cor.green() + 'COOLER ----------- R$50,00' + cor.close()
+Tabela[55]=cor.green() + 'GABINETE --------- R$300,00' + cor.close()
+Tabela[20]=cor.green() + 'MONITOR ---------- R$400,00' + cor.close()
 
 cooler = 44
 
@@ -93,5 +93,13 @@ def mostrarProdutos():
     print(k, v)
 
 def pesquisarNome():
-  item = Tabela.get(int(input('Pesquisar: ')))
-  return item
+  pesquisa = str(input('Pesquisar: ')).upper()
+  produto = {'PLACA MÃE': 54, 'MEMORIA RAM': 26, 'PROCESSADOR': 93, 'SSD 500GB': 17, 'SSD 256GB':77, 'PLACA DE VÍDEO':31, 'COOLER':44, 'GABINETE': 55, 'MONITOR': 20}
+  produto = produto.pop(pesquisa)
+  for c in range(len(Tabela.slots)):
+    if produto == Tabela.slots[c]:
+      print('Escontramos seu produto!')
+      item = Tabela.get(produto)
+      return item
+  else:
+    print('Não temos esse produto!')

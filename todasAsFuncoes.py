@@ -37,7 +37,7 @@ def consumidor():
     if opcao == '1':
         mostrarProdutos()
     elif opcao == '2':
-        pesquisarNome()
+        print(pesquisarNome())
     elif opcao == '3':
         exit()
     else:
@@ -46,8 +46,10 @@ def consumidor():
             opcao = input(' Qual sua resposta? ')
             if opcao == '1':
                 mostrarProdutos()
+                consumidor()
             elif opcao == '2':
-                pesquisarNome()
+                print(pesquisarNome())
+                consumidor()
             elif opcao == '3':
                 exit()
     consumidor()
