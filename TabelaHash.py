@@ -1,3 +1,5 @@
+import random
+
 class cor:
   def __init__(self):
     self.cor = None
@@ -70,10 +72,9 @@ class  TabelaHash:
 
 
 Tabela = TabelaHash()
-Tabela[54]=cor.green() + 'PLACA MÃE ------- R$500,00' + cor.close()
+Tabela[1]=cor.green() + 'PLACA MÃE ------- R$500,00' + cor.close()
 Tabela[26]=cor.green() + 'MEMORIA RAM ------ R$200,00' + cor.close()
 Tabela[93]=cor.green() + 'PROCESSADOR I5 --- R$500,00' + cor.close()
-Tabela[17]=cor.green() + 'SSD 500GB -------- R$400,00' + cor.close()
 Tabela[77]=cor.green() + 'SSD 256GB -------- R$200,00' + cor.close()
 Tabela[31]=cor.green() + 'PLACA DE VÍDEO --- R$1500,00' + cor.close()
 Tabela[44]=cor.green() + 'COOLER ----------- R$50,00' + cor.close()
@@ -89,30 +90,26 @@ def mostrarProdutos():
     print(k, v)
 
 
-def adicionarProduto(produto):
-  while True:
-    if Tabela[66] is None:
-      nome = input('Adicionar: ').upper()
-      produto[nome] = 66
-      valor = float(input('Valor: R$'))
-      adicionar = (f'{nome} ---------- R${valor :.2f}')
-      Tabela.put(66,cor.green() + adicionar + cor.close())
-      mostrarProdutos()
-      return produto[nome]
 
-    else:
+def adicionarProduto(produto):
+  for posição in range(len(Tabela.slots)):
+    if Tabela.slots[posição] is None:
       nome = input('Adicionar: ').upper()
-      produto[nome] = 36
+      produto[nome] = random.randint(1, 100)
+      for c in produto.values():
+        posição = c
       valor = float(input('Valor: R$'))
       adicionar = (f'{nome} ---------- R${valor :.2f}')
-      Tabela.put(36,cor.green() + adicionar + cor.close())
+      Tabela.put(posição,cor.green() + adicionar + cor.close())
       mostrarProdutos()
       return produto[nome]
+  else:
+    print(cor.red() + 'TABELA HASH ESTÁ CHEIA' + cor.close())
 
 
 def pesquisarNome(produto2):
   pesquisa = str(input('Pesquisar: ')).upper()
-  produto1 = {'PLACA MÃE': 54, 'MEMORIA RAM': 26, 'PROCESSADOR': 93, 'SSD 500GB': 17, 'SSD 256GB':77, 'PLACA DE VÍDEO':31, 'COOLER':44, 'GABINETE': 55, 'MONITOR': 20}
+  produto1 = {'PLACA MÃE': 54, 'MEMORIA RAM': 26, 'PROCESSADOR': 93, 'SSD 256GB':77, 'PLACA DE VÍDEO':31, 'COOLER':44, 'GABINETE': 55, 'MONITOR': 20}
   produto1.update(produto2)
   novoProdutos = produto1
   for chave in novoProdutos.keys():
@@ -120,6 +117,7 @@ def pesquisarNome(produto2):
       valor_produto = novoProdutos[chave]
       for c in range(len(Tabela.slots)):
         if valor_produto == Tabela.slots[c]:
+          print(Tabela.slots[c])
           print('Escontramos seu produto!')
           item = Tabela.get(valor_produto)
           return print(item)
