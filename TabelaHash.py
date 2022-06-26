@@ -1,6 +1,3 @@
-from cgi import print_arguments
-
-
 class cor:
   def __init__(self):
     self.cor = None
@@ -92,32 +89,39 @@ def mostrarProdutos():
     print(k, v)
 
 
-def adicionarProduto():
+def adicionarProduto(produto):
   while True:
     if Tabela[66] is None:
       nome = input('Adicionar: ').upper()
+      produto[nome] = 66
       valor = float(input('Valor: R$'))
       adicionar = (f'{nome} ---------- R${valor :.2f}')
       Tabela.put(66,cor.green() + adicionar + cor.close())
       mostrarProdutos()
-      return False
+      return produto[nome]
 
     else:
       nome = input('Adicionar: ').upper()
+      produto[nome] = 36
       valor = float(input('Valor: R$'))
       adicionar = (f'{nome} ---------- R${valor :.2f}')
       Tabela.put(36,cor.green() + adicionar + cor.close())
       mostrarProdutos()
-      return False
+      return produto[nome]
 
-def pesquisarNome():
+
+def pesquisarNome(produto2):
   pesquisa = str(input('Pesquisar: ')).upper()
-  produto = {'PLACA MÃE': 54, 'MEMORIA RAM': 26, 'PROCESSADOR': 93, 'SSD 500GB': 17, 'SSD 256GB':77, 'PLACA DE VÍDEO':31, 'COOLER':44, 'GABINETE': 55, 'MONITOR': 20}
-  produto = produto.pop(pesquisa)
-  for c in range(len(Tabela.slots)):
-    if produto == Tabela.slots[c]:
-      print('Escontramos seu produto!')
-      item = Tabela.get(produto)
-      return item
+  produto1 = {'PLACA MÃE': 54, 'MEMORIA RAM': 26, 'PROCESSADOR': 93, 'SSD 500GB': 17, 'SSD 256GB':77, 'PLACA DE VÍDEO':31, 'COOLER':44, 'GABINETE': 55, 'MONITOR': 20}
+  produto1.update(produto2)
+  novoProdutos = produto1
+  for chave in novoProdutos.keys():
+    if pesquisa == chave:
+      valor_produto = novoProdutos[chave]
+      for c in range(len(Tabela.slots)):
+        if valor_produto == Tabela.slots[c]:
+          print('Escontramos seu produto!')
+          item = Tabela.get(valor_produto)
+          return print(item)
   else:
     print('Não temos esse produto!')

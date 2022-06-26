@@ -5,7 +5,7 @@ from TabelaHash import *
 def login():
     usuario = 'romulo'
     senha = '123456'
-    novo_user = input('Usuário: ').lower()
+    novo_user = input('Usuário: ').lower().strip()
     nova_password = input('Senha: ')
     if usuario == novo_user and senha == nova_password:
         print('Entrando no sistema')
@@ -38,7 +38,7 @@ def consumidor():
     if opcao == '1':
         mostrarProdutos()
     elif opcao == '2':
-        print(pesquisarNome())
+        print(pesquisarNome(produto2))
     elif opcao == '3':
         exit()
     else:
@@ -49,7 +49,7 @@ def consumidor():
                 mostrarProdutos()
                 consumidor()
             elif opcao == '2':
-                print(pesquisarNome())
+                print(pesquisarNome(produto2))
                 consumidor()
             elif opcao == '3':
                 exit()
@@ -66,13 +66,13 @@ def trabalhador():
 ''')
     opcao = input('Resposta: ')
     if opcao == '1':
-        adicionarProduto()
+        adicionarProduto(produto2)
     elif opcao == '2':
         print(' remover um produto da tabela hash')
     elif opcao == '3':
         mostrarProdutos()
     elif opcao == '4':
-        print(pesquisarNome())
+        print(pesquisarNome(produto2))
     elif opcao == '5':
         exit()
     else:
@@ -80,13 +80,15 @@ def trabalhador():
             print('\033[1;31m OPÇÃO INVÁLIDA \033[m')
             opcao = input(' Qual sua resposta? ')
             if opcao == '1':
-                adicionarProduto()
+                adicionarProduto(produto2)
             elif opcao == '2':
                 print(' remover um produto da tabela hash')
             elif opcao == '3':
                 mostrarProdutos()
             elif opcao == '4':
-                print(pesquisarNome())
+                print(pesquisarNome(produto2))
             elif opcao == '5':
                 exit()
     trabalhador()
+
+produto2 = {}
