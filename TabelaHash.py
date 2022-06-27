@@ -12,6 +12,8 @@ class cor:
   def green(cor = None):
     blue = '\033[1;32m'
     return blue
+  def yellow(cor = None):
+    yellow = '\033[1;33m'
 
 class  TabelaHash:
     def __init__(self):
