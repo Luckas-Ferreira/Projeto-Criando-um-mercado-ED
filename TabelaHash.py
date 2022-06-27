@@ -1,4 +1,5 @@
 import random
+from time import sleep
 
 class cor:
   def __init__(self):
@@ -14,6 +15,7 @@ class cor:
     return blue
   def yellow(cor = None):
     yellow = '\033[1;33m'
+    return yellow
 
 class  TabelaHash:
     def __init__(self):
@@ -85,32 +87,37 @@ Tabela[20]=cor.green() + 'MONITOR ---------- R$400,00' + cor.close()
 
 
 def mostrarProdutos():
-  print('Mostrando todos os produtos')
+  sleep(0.5)
+  print(cor.yellow() + '\n  MOSTRANDO TODOS OS PRODUTOS \n' + cor.close())
+  sleep(0.3)
   for k, v in enumerate(Tabela.data):
     if v == None:
       v = '\033[1;31mVazio ------------ R$0,00\033[m'
     print(k, v)
+    sleep(0.1)
 
 
 
 def adicionarProduto(produto):
   for posição in range(len(Tabela.slots)):
     if Tabela.slots[posição] is None:
-      nome = input('Adicionar: ').upper()
+      nome = input('Adicionar: ').upper().strip()
       produto[nome] = random.randint(1, 100)
       for c in produto.values():
         posição = c
       valor = float(input('Valor: R$'))
       adicionar = (f'{nome} ---------- R${valor :.2f}')
       Tabela.put(posição,cor.green() + adicionar + cor.close())
+      sleep(0.5)
       mostrarProdutos()
+      sleep(0.5)
       return produto[nome]
   else:
     print(cor.red() + 'TABELA HASH ESTÁ CHEIA' + cor.close())
 
 
 def pesquisarNome(produto2):
-  pesquisa = str(input('Pesquisar: ')).upper()
+  pesquisa = str(input('Pesquisar: ')).upper().strip()
   produto1 = {'PLACA MÃE': 54, 'MEMORIA RAM': 26, 'PROCESSADOR': 93, 'SSD 256GB':77, 'PLACA DE VÍDEO':31, 'COOLER':44, 'GABINETE': 55, 'MONITOR': 20}
   produto1.update(produto2)
   novoProdutos = produto1
@@ -119,9 +126,10 @@ def pesquisarNome(produto2):
       valor_produto = novoProdutos[chave]
       for c in range(len(Tabela.slots)):
         if valor_produto == Tabela.slots[c]:
-          print(Tabela.slots[c])
-          print('Escontramos seu produto!')
+          sleep(0.5)
+          print(cor.red() + '\n\n  ENCONTRAMOS SEU PRODUTO \n' + cor.close())
+          sleep(0.5)
           item = Tabela.get(valor_produto)
           return print(item)
   else:
-    print('Não temos esse produto!')
+    print(cor.red() + '\n\n  NÃO TEMOS ESTE PRODUTO \n' + cor.close())
