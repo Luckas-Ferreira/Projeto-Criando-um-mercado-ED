@@ -8,15 +8,6 @@
   </a>
 </p>
 
-<p align="center">
- <a href="#">Features</a> •
- <a href="#">Roadmap</a> • 
- <a href="#">Tecnologias</a> • 
- <a href="#">Contribuição</a> • 
- <a href="#">Licença</a> • 
- <a href="#">Autor</a>
-</p>
-
 <h4 align="center"> 
 	🚧  Sistema Logístico com Tabela Hash 🚀 Em construção...  🚧
 </h4>
