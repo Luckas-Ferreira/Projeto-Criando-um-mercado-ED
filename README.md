@@ -70,7 +70,7 @@ A seguinte ferramenta foi usada na construção do projeto:
 ---
 
 <a href="https://github.com/Luckas-Ferreira">
- <img style="border-radius: 50%;" src="https://uploaddeimagens.com.br/imagens/bUZRdEM" width="100px;" alt=""/>
+ <img style="border-radius: 50%;" src="Meu-Curriculo/perfil/photo.jpeg" width="100px;" alt=""/>
  <br />
  <sub><b>Luckas Ferreira</b></sub></a> <a href="https://github.com/Luckas-Ferreira" title="Rocketseat">🚀</a>
 
