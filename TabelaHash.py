@@ -101,11 +101,11 @@ def mostrarProdutos():
 def adicionarProduto(produto):
   for posição in range(len(Tabela.slots)):
     if Tabela.slots[posição] is None:
-      nome = input('Adicionar: ').upper().strip()
+      nome = input(cor.red() + 'Adicionar: ' + cor.close()).upper().strip()
       produto[nome] = random.randint(1, 100)
       for c in produto.values():
         posição = c
-      valor = float(input('Valor: R$'))
+      valor = float(input(cor.red() + 'Valor: R$' + cor.close()))
       adicionar = (f'{nome} ---------- R${valor :.2f}')
       Tabela.put(posição,cor.green() + adicionar + cor.close())
       sleep(0.5)
@@ -117,7 +117,7 @@ def adicionarProduto(produto):
 
 
 def pesquisarNome(produto2):
-  pesquisa = str(input('Pesquisar: ')).upper().strip()
+  pesquisa = str(input(cor.green() + 'Pesquisar: ' + cor.close())).upper().strip()
   produto1 = {'PLACA MÃE': 54, 'MEMORIA RAM': 26, 'PROCESSADOR': 93, 'SSD 256GB':77, 'PLACA DE VÍDEO':31, 'COOLER':44, 'GABINETE': 55, 'MONITOR': 20}
   produto1.update(produto2)
   novoProdutos = produto1

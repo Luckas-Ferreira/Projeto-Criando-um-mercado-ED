@@ -15,28 +15,29 @@ def Titulo():
 def login():
     usuario = 'romulo'
     senha = '123456'
-    novo_user = input('Usuário: ').lower().strip()
-    nova_password = input('Senha: ')
+    novo_user = input(cor.green() + 'Usuário: ' + cor.close()).lower().strip()
+    nova_password = input(cor.green() + 'Senha: ' + cor.close())
     if usuario == novo_user and senha == nova_password:
         print(cor.yellow() + '\n\t       ENTRANDO NO SISTEMA' + cor.close())
         sleep(1)
         trabalhador()
     else:
         resp = ''
-        print('LOGIN INVALIDO')
+        print(cor.red() + '\nLOGIN INVALIDO' + cor.close())
         while resp != 'S':
-            resp = input('Deseja cadastrar um novo usuário? [S/N]: ').upper()[0]
+            sleep(0.5)
+            resp = input(cor.yellow() + 'Deseja cadastrar um novo usuário? [S/N]: ' + cor.close()).upper()[0]
             if resp == 'S':
-                usuario2 = input('Novo Usuário: ')
-                senha2 = input('Nova Senha: ')
-                print('Novo login cadastrado!')
-                novo_user = input('Usuário: ')
-                nova_password = input('Senha: ')
+                usuario2 = input(cor.green() + '\nNovo Usuário: ' + cor.close())
+                senha2 = input(cor.green() + 'Nova Senha: ' + cor.close())
+                print(cor.red() + 'Novo login cadastrado!' + cor.close())
+                novo_user = input(cor.green() + 'Usuário: ' + cor.close())
+                nova_password = input(cor.green() + 'Senha: ' + cor.close())
                 if usuario == novo_user and senha == nova_password or usuario2 == novo_user and senha2 == nova_password:
-                    print('Entrando no sistema')
+                    print(cor.yellow() + 'Entrando no sistema' + cor.close())
                     trabalhador()
             else:
-                exit()
+                telaInicial()
                 
 
 def consumidor():
