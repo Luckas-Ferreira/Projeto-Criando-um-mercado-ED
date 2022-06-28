@@ -41,26 +41,38 @@
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+[Git](https://git-scm.com), [Python](https://www.python.org). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### 🎲 Rodando o Back End (servidor)
+### 🎲 Rodando o Sistema Logístico
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone <https://github.com/Luckas-Ferreira/Projeto-Criando-um-mercado-ED.git>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd nlw1
+$ cd Projeto-Criando-um-mercado-ED
 
-# Vá para a pasta server
-$ cd server
+# Abra o Visual Code
+$ code .
 
-# Instale as dependências
-$ npm install
-
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev:server
-
-# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+# Execulte o arquivo
+$ SistemaPrincipal.py
 ```
+
+### 🛠 Tecnologia
+
+A seguinte ferramenta foi usada na construção do projeto:
+
+- [Python](https://www.python.org)
+
+### Autor
+---
+
+<a href="https://github.com/Luckas-Ferreira">
+ <img style="border-radius: 50%;" src="https://uploaddeimagens.com.br/imagens/bUZRdEM" width="100px;" alt=""/>
+ <br />
+ <sub><b>Luckas Ferreira</b></sub></a> <a href="https://github.com/Luckas-Ferreira" title="Rocketseat">🚀</a>
+
+[![Twitter Badge](https://img.shields.io/badge/-@tgmarinho-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/tgmarinho)](https://twitter.com/tgmarinho) [![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/tgmarinho/) 
+[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:tgmarinho@gmail.com)
