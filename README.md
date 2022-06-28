@@ -35,5 +35,5 @@ _Atualização do README em breve!_
 - [ ] Compra de produtos
 
 <h1 align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/banner.png" />
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="Demonstração/0.png" />
 </h1>
