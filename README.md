@@ -58,7 +58,7 @@ A seguinte ferramenta foi usada na construção do projeto:
 
 - [Python](https://www.python.org)
 
-### Autor
+### Autores
 ---
 
 <a href="https://github.com/Luckas-Ferreira">
@@ -69,7 +69,13 @@ A seguinte ferramenta foi usada na construção do projeto:
 <a href="https://instagram.com/luckas_.ferreira" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
   <a href = "mailto:lucas.ferreira2@arapiraca.ufal.br"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
   <a href="https://www.linkedin.com/in/luckas-ferreira-49a7a219b/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
-  
-#
+ 
+ 
+ <a href="https://github.com/FlavioHenriqueNL">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/32113255?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Flávio Henrique Nunes Leite</b></sub></a> <a href="https://github.com/FlavioHenriqueNL" title="Sistema Logístico">🚀</a>
+
+ ---
 
 ### _Me ajude a implementar o resto das Features. Desde já agradeço!_ 😀
