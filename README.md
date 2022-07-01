@@ -78,4 +78,4 @@ A seguinte ferramenta foi usada na construção do projeto:
 
  ---
 
-### _Me ajude a implementar o resto das Features. Desde já agradeço!_ 😀
+### _Nós ajude a implementar o resto das Features. Desde já agradeço!_ 😀
